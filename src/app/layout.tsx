@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Particles } from "@/components/magicui/particles";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -102,6 +103,7 @@ export default function RootLayout({
         >
           <ScrollArea className="h-screen">{children}</ScrollArea>
           <Particles className="absolute inset-0 -z-10 h-full" />
+          <Toaster richColors position="bottom-right" />
         </ThemeProvider>
       </body>
     </html>

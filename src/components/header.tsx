@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { Github, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
@@ -83,13 +83,23 @@ export function Header() {
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button variant="ghost" size="sm" asChild>
+          <Button variant="outline" size="default" asChild>
             <Link
               href="https://github.com/ngogiahuandev/shadcn-ui-custom-form-field"
               target="_blank"
             >
               <Github className="h-4 w-4" />
-              <span className="sr-only">GitHub</span>
+              <span>ngogiahuandev</span>
+            </Link>
+          </Button>
+          <Button
+            size="default"
+            asChild
+            className="cursor-pointer bg-amber-400 text-black hover:bg-amber-600"
+          >
+            <Link href="https://buymeacoffee.com/ngogiahuana" target="_blank">
+              <Coffee className="h-4 w-4" />
+              <span>Buy me a coffee</span>
             </Link>
           </Button>
           <ThemeToggle />

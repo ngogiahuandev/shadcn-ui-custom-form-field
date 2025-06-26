@@ -10,6 +10,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Book, Code, Settings, Lightbulb } from "lucide-react";
+import { validationCode } from "@/const/validattion-code";
+import CodeBlock from "@/components/ui/code-block";
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 
 export function DocumentationSection() {
   return (
@@ -17,7 +20,7 @@ export function DocumentationSection() {
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <Badge variant="outline" className="mb-2">
           <Book className="mr-2 h-3 w-3" />
-          Documentation
+          <AnimatedShinyText>Documentation</AnimatedShinyText>
         </Badge>
         <h2 className="text-3xl leading-tight font-bold tracking-tighter md:text-5xl">
           Complete API Reference
@@ -219,69 +222,7 @@ export function DocumentationSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted overflow-x-auto rounded-lg p-4 text-sm">
-                  <code>{`import { z } from "zod"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { CustomFormField } from "@/components/ui/custom-form-field"
-
-const formSchema = z.object({
-  email: z.string().email("Invalid email address"),
-  age: z.number().min(18, "Must be at least 18"),
-  bio: z.string().min(10, "Bio must be at least 10 characters"),
-  newsletter: z.boolean(),
-})
-
-function MyForm() {
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      age: 0,
-      bio: "",
-      newsletter: false,
-    },
-  })
-
-  return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <CustomFormField
-          control={form.control}
-          name="email"
-          type="email"
-          label="Email Address"
-          placeholder="Enter your email"
-          required
-        />
-        <CustomFormField
-          control={form.control}
-          name="age"
-          type="number"
-          label="Age"
-          min={18}
-          max={120}
-          required
-        />
-        <CustomFormField
-          control={form.control}
-          name="bio"
-          type="textarea"
-          label="Biography"
-          placeholder="Tell us about yourself"
-          rows={4}
-        />
-        <CustomFormField
-          control={form.control}
-          name="newsletter"
-          type="checkbox"
-          label="Subscribe to newsletter"
-        />
-      </form>
-    </Form>
-  )
-}`}</code>
-                </pre>
+                <CodeBlock code={validationCode} />
               </CardContent>
             </Card>
           </TabsContent>

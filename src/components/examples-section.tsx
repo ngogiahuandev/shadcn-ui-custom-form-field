@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -7,16 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import CodeBlock from "@/components/ui/code-block";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import { Code2, Copy } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Code2 } from "lucide-react";
 
 export function ExamplesSection() {
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-  };
-
   const basicExample = `import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -249,14 +247,11 @@ export function RegistrationForm() {
 }`;
 
   return (
-    <section
-      id="examples"
-      className="bg-muted/50 space-y-6 py-8 md:py-12 lg:py-24"
-    >
+    <section id="examples" className="space-y-6 py-8 md:py-12 lg:py-24">
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <Badge variant="outline" className="mb-2">
           <Code2 className="mr-2 h-3 w-3" />
-          Code Examples
+          <AnimatedShinyText>Code Examples</AnimatedShinyText>
         </Badge>
         <h2 className="text-3xl leading-tight font-bold tracking-tighter md:text-5xl">
           Real-World Examples
@@ -284,19 +279,9 @@ export function RegistrationForm() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative">
-                  <pre className="bg-muted max-h-96 overflow-x-auto overflow-y-auto rounded-lg p-4 text-sm">
-                    <code>{basicExample}</code>
-                  </pre>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="absolute top-2 right-2"
-                    onClick={() => copyToClipboard(basicExample)}
-                  >
-                    <Copy className="h-4 w-4" />
-                  </Button>
-                </div>
+                <ScrollArea className="h-[500px] rounded-md">
+                  <CodeBlock code={basicExample} />
+                </ScrollArea>
               </CardContent>
             </Card>
           </TabsContent>
@@ -311,19 +296,9 @@ export function RegistrationForm() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="relative">
-                  <pre className="bg-muted max-h-96 overflow-x-auto overflow-y-auto rounded-lg p-4 text-sm">
-                    <code>{advancedExample}</code>
-                  </pre>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="absolute top-2 right-2"
-                    onClick={() => copyToClipboard(advancedExample)}
-                  >
-                    <Copy className="h-4 w-4" />
-                  </Button>
-                </div>
+                <ScrollArea className="h-[500px] rounded-md">
+                  <CodeBlock code={advancedExample} />
+                </ScrollArea>
               </CardContent>
             </Card>
           </TabsContent>
