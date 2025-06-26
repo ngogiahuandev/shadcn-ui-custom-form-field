@@ -1,6 +1,50 @@
 {
   "name": "shadcn-ui-custom-form-field",
   "version": "0.1.0",
+  "description": "A comprehensive, type-safe form field component for React Hook Form and Shadcn UI. Supports 10+ field types with built-in validation, accessibility, and seamless integration.",
+  "homepage": "https://customformfield.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/custom-form-field.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/custom-form-field/issues"
+  },
+  "author": {
+    "name": "CustomFormField Team",
+    "email": "hello@customformfield.dev",
+    "url": "https://customformfield.dev"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-hook-form",
+    "shadcn-ui",
+    "typescript",
+    "form-validation",
+    "form-components",
+    "ui-components",
+    "accessibility",
+    "a11y",
+    "wcag",
+    "zod",
+    "form-builder",
+    "custom-forms",
+    "react-forms",
+    "tailwind",
+    "radix-ui",
+    "next.js",
+    "form-field",
+    "input-components",
+    "date-picker",
+    "select-dropdown",
+    "checkbox",
+    "radio-buttons",
+    "textarea",
+    "developer-tools",
+    "open-source",
+    "mit-license"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -8,7 +52,10 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "seo:validate": "next build && lighthouse http://localhost:3000 --output=json --quiet --chrome-flags='--headless'",
+    "seo:sitemap": "next build && curl http://localhost:3000/sitemap.xml",
+    "seo:robots": "next build && curl http://localhost:3000/robots.txt"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
