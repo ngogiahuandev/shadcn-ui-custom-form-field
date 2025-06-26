@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
+import { DocumentationSection } from "@/components/documentation-section";
+import { ExamplesSection } from "@/components/examples-section";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
-import { FeaturesSection } from "@/components/features-section";
-import { DocumentationSection } from "@/components/documentation-section";
-import { PlaygroundSection } from "@/components/playground-section";
 import { InstallationSection } from "@/components/installation-section";
-import { ExamplesSection } from "@/components/examples-section";
+import { PlaygroundSection } from "@/components/playground-section";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
@@ -28,7 +27,6 @@ export default function HomePage() {
       <Header />
       <main className="container mx-auto">
         <HeroSection />
-        <FeaturesSection />
         <InstallationSection />
         <DocumentationSection />
         <ExamplesSection />

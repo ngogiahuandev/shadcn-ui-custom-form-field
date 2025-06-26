@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Particles } from "@/components/magicui/particles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,6 +101,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ScrollArea className="h-screen">{children}</ScrollArea>
+          <Particles className="absolute inset-0 -z-10 h-full" />
         </ThemeProvider>
       </body>
     </html>

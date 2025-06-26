@@ -20,7 +20,7 @@ export function InstallationSection() {
   return (
     <section
       id="installation"
-      className="bg-muted/50 space-y-6 py-8 md:py-12 lg:py-24"
+      className="bg-muted/50 space-y-6 rounded-lg border py-8 md:py-12 lg:py-24"
     >
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center">
         <Badge variant="outline" className="mb-2">
